@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Computer Systems Week 1 Lab}
+\author{Daniel Coady (102084174)}
+\date{07/08/2019}
+
+\usepackage{graphicx}
+\usepackage[margin=0.5in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+% and gate
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{AND Gate} \\
+        \hline
+        pin1 & pin2 & output \\
+        \hline\hline
+        0 & 0 & 0 \\
+        \hline
+        1 & 0 & 0 \\
+        \hline
+        0 & 1 & 0 \\
+        \hline
+        1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+\centering\includegraphics{images/andgate.png}
+
+% not gate
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{NOT Gate} \\
+        \hline
+        pin1 & output \\
+        \hline\hline
+        0 & 1 \\
+        \hline
+        1 & 0 \\
+        \hline
+    \end{tabular}
+\end{center}
+\centering\includegraphics{images/notgate.png}
+
+% nand gate
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{NAND Gate} \\
+        \hline
+        pin1 & pin2 & output \\
+        \hline\hline
+        0 & 0 & 1 \\
+        \hline
+        1 & 0 & 1 \\
+        \hline
+        0 & 1 & 1 \\
+        \hline
+        1 & 1 & 0 \\
+        \hline
+    \end{tabular}
+\end{center}
+\centering\includegraphics[scale=0.5]{images/nandgate.png}
+
+\clearpage
+
+% half adder
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Half Adder} \\
+        \hline
+        pin1 & pin2 & output & carry bit \\
+        \hline\hline
+        0 & 0 & 0 & 0 \\
+        \hline
+        1 & 0 & 1 & 0 \\
+        \hline
+        0 & 1 & 1 & 0 \\
+        \hline
+        1 & 1 & 0 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+\centering\includegraphics[scale=0.5]{images/halfadder.png}
+
+% full adder
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \multicolumn{5}{|c|}{Full Adder} \\
+        \hline
+        pin1 & pin2 & pin3 & output1 & output2 \\
+        \hline\hline
+        0 & 0 & 0 & 0 & 0 \\
+        \hline
+        1 & 0 & 0 & 1 & 0 \\
+        \hline
+        0 & 1 & 0 & 1 & 0 \\
+        \hline
+        0 & 0 & 1 & 1 & 0 \\
+        \hline
+        1 & 1 & 0 & 0 & 1 \\
+        \hline
+        1 & 0 & 1 & 0 & 1 \\
+        \hline
+        0 & 1 & 1 & 0 & 1 \\
+        \hline
+        1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+\centering\includegraphics[scale=0.5]{images/fulladder.png}
+
+\end{document}
