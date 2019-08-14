@@ -1,3 +1,5 @@
+# computer systems week 1 lecture notes
+
 - email chris outside of labs instead of tutors for questions
 - keep an eye on announcements
 - on canvas:
@@ -5,7 +7,7 @@
     - join group that is your lab
 - lab work submitted through canvas
 
->> ILOs
+## ILOs
 - read and write assembly language programs for a simple microcomputer
 - identify the hardware components of a computer and the fucntion they perform
 - describe the overall behavious of compilers, assemblers, linkers and interpreters
@@ -13,7 +15,7 @@
 
 - there are tutorials chris has made on youtube for the labs
 
->> assessments
+## assessments
 - lab work 10% (mostly just an attendance mark)
 - assignment 1 15%
 - assignment 2 15%
@@ -39,7 +41,7 @@
     - 2 hex chars == 1 byte
     - 11111111 == 0xFF
 
->> what is a computer system?
+## what is a computer system?
 - fast memory (ram)
     - program and data
 - persistent memory
@@ -52,24 +54,24 @@
 - keyboard
 - mouse
 
-> basic machine instructions
+### basic machine instructions
     - CISC
         - complex instruction set cpu
     - RISC
         - reduced instruction set cpu
     - native code runs really fast on the "bare metal"
-> bios
+### bios
     - basic input output system
     - factory set code
     - you can't change
     - handles startup stuff
-> operating system
+### operating system
     - dos (disk operating system), linux
     - gui (graphical user interface) windows, osx
-> applications
+### applications
     - code that operates on top of the os
 
->> issues
+## issues
 - storing information
     - how do we represent types of data?
     - big endian vs little endian
@@ -80,12 +82,12 @@
             - right most value is the most significant
             - eg date/time (30 mins past 11 oclock 6th of august 2014)
 
->> digital vs analouge
+## digital vs analouge
 - digital tries to emulate analouge
 - digital is more robust
 - analouge is more accurate
 
->> number systems
+## number systems
 - numbers are "positional"
     - multiples based on the columns
     - eg 14 == 10 10s and 4 1s
@@ -94,10 +96,10 @@
 - A = 11 B = 12 etc...
 
 
->> bitwise operations
+## bitwise operations
 - can base decisions on a single bit
 
->> gates
+## gates
 - gates are electronic components that has an output dependant on inputs
 - usually transistors connected together
 
@@ -144,7 +146,7 @@
     1 0 1
     1 1 0
 
->> diagram conventions
+## diagram conventions
 - wire has the same voltage
 - don't care about the power input
 
