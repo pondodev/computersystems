@@ -133,156 +133,92 @@ end TCL_Generic;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="circuitvhdlpath" val=""/>
-    <wire from="(380,970)" to="(380,1040)"/>
-    <wire from="(240,950)" to="(240,1020)"/>
-    <wire from="(360,930)" to="(360,1000)"/>
-    <wire from="(240,230)" to="(240,300)"/>
-    <wire from="(200,270)" to="(200,340)"/>
-    <wire from="(200,990)" to="(200,1060)"/>
-    <wire from="(470,700)" to="(790,700)"/>
-    <wire from="(470,460)" to="(790,460)"/>
-    <wire from="(360,440)" to="(410,440)"/>
-    <wire from="(360,680)" to="(410,680)"/>
-    <wire from="(360,1000)" to="(410,1000)"/>
-    <wire from="(330,970)" to="(380,970)"/>
-    <wire from="(460,1020)" to="(580,1020)"/>
-    <wire from="(350,550)" to="(350,570)"/>
-    <wire from="(350,790)" to="(350,810)"/>
-    <wire from="(160,270)" to="(200,270)"/>
-    <wire from="(160,990)" to="(200,990)"/>
-    <wire from="(940,300)" to="(940,320)"/>
-    <wire from="(940,400)" to="(940,420)"/>
-    <wire from="(940,500)" to="(940,520)"/>
-    <wire from="(350,1060)" to="(580,1060)"/>
-    <wire from="(240,300)" to="(270,300)"/>
-    <wire from="(240,460)" to="(270,460)"/>
-    <wire from="(240,700)" to="(270,700)"/>
-    <wire from="(380,480)" to="(410,480)"/>
-    <wire from="(380,720)" to="(410,720)"/>
-    <wire from="(380,1040)" to="(410,1040)"/>
-    <wire from="(240,1020)" to="(270,1020)"/>
-    <wire from="(320,1040)" to="(350,1040)"/>
-    <wire from="(630,1040)" to="(790,1040)"/>
-    <wire from="(940,300)" to="(1160,300)"/>
-    <wire from="(940,400)" to="(1160,400)"/>
-    <wire from="(940,500)" to="(1160,500)"/>
-    <wire from="(1160,340)" to="(1160,400)"/>
-    <wire from="(1160,440)" to="(1160,500)"/>
-    <wire from="(330,250)" to="(790,250)"/>
-    <wire from="(160,460)" to="(240,460)"/>
-    <wire from="(160,700)" to="(240,700)"/>
-    <wire from="(360,880)" to="(630,880)"/>
-    <wire from="(360,880)" to="(360,930)"/>
-    <wire from="(200,270)" to="(270,270)"/>
-    <wire from="(200,570)" to="(270,570)"/>
-    <wire from="(200,810)" to="(270,810)"/>
-    <wire from="(200,990)" to="(270,990)"/>
-    <wire from="(1160,260)" to="(1160,300)"/>
-    <wire from="(380,720)" to="(380,790)"/>
-    <wire from="(360,440)" to="(360,510)"/>
-    <wire from="(380,480)" to="(380,550)"/>
-    <wire from="(360,680)" to="(360,750)"/>
-    <wire from="(240,460)" to="(240,530)"/>
-    <wire from="(200,500)" to="(200,570)"/>
-    <wire from="(240,700)" to="(240,770)"/>
-    <wire from="(200,740)" to="(200,810)"/>
-    <wire from="(470,950)" to="(790,950)"/>
-    <wire from="(360,510)" to="(410,510)"/>
-    <wire from="(330,480)" to="(380,480)"/>
-    <wire from="(360,750)" to="(410,750)"/>
-    <wire from="(330,720)" to="(380,720)"/>
-    <wire from="(360,930)" to="(410,930)"/>
-    <wire from="(460,530)" to="(580,530)"/>
-    <wire from="(460,770)" to="(580,770)"/>
-    <wire from="(350,1040)" to="(350,1060)"/>
-    <wire from="(630,790)" to="(630,880)"/>
-    <wire from="(630,550)" to="(630,630)"/>
-    <wire from="(160,500)" to="(200,500)"/>
-    <wire from="(160,740)" to="(200,740)"/>
-    <wire from="(320,320)" to="(360,320)"/>
-    <wire from="(350,570)" to="(580,570)"/>
-    <wire from="(350,810)" to="(580,810)"/>
-    <wire from="(240,230)" to="(270,230)"/>
-    <wire from="(240,530)" to="(270,530)"/>
-    <wire from="(380,550)" to="(410,550)"/>
-    <wire from="(380,790)" to="(410,790)"/>
-    <wire from="(380,970)" to="(410,970)"/>
-    <wire from="(240,770)" to="(270,770)"/>
-    <wire from="(240,950)" to="(270,950)"/>
-    <wire from="(320,550)" to="(350,550)"/>
-    <wire from="(320,790)" to="(350,790)"/>
-    <wire from="(160,230)" to="(240,230)"/>
-    <wire from="(160,950)" to="(240,950)"/>
-    <wire from="(360,630)" to="(630,630)"/>
-    <wire from="(360,630)" to="(360,680)"/>
-    <wire from="(200,340)" to="(270,340)"/>
-    <wire from="(200,500)" to="(270,500)"/>
-    <wire from="(200,740)" to="(270,740)"/>
-    <wire from="(200,1060)" to="(270,1060)"/>
-    <wire from="(360,320)" to="(360,440)"/>
-    <comp lib="1" loc="(330,250)" name="XOR Gate"/>
-    <comp lib="1" loc="(320,320)" name="AND Gate"/>
-    <comp lib="1" loc="(470,460)" name="XOR Gate"/>
-    <comp lib="1" loc="(330,480)" name="XOR Gate"/>
-    <comp lib="1" loc="(460,530)" name="AND Gate"/>
-    <comp lib="1" loc="(630,550)" name="OR Gate"/>
-    <comp lib="1" loc="(320,550)" name="AND Gate"/>
-    <comp lib="1" loc="(320,790)" name="AND Gate"/>
-    <comp lib="1" loc="(470,700)" name="XOR Gate"/>
-    <comp lib="1" loc="(330,720)" name="XOR Gate"/>
-    <comp lib="1" loc="(630,790)" name="OR Gate"/>
-    <comp lib="1" loc="(460,770)" name="AND Gate"/>
-    <comp lib="0" loc="(160,230)" name="Pin"/>
-    <comp lib="0" loc="(160,270)" name="Pin"/>
-    <comp lib="0" loc="(160,460)" name="Pin"/>
-    <comp lib="0" loc="(160,500)" name="Pin"/>
-    <comp lib="0" loc="(160,700)" name="Pin"/>
-    <comp lib="0" loc="(160,740)" name="Pin"/>
-    <comp lib="5" loc="(790,250)" name="LED"/>
-    <comp lib="5" loc="(790,460)" name="LED"/>
-    <comp lib="5" loc="(790,700)" name="LED"/>
-    <comp lib="1" loc="(330,970)" name="XOR Gate"/>
-    <comp lib="1" loc="(460,1020)" name="AND Gate"/>
-    <comp lib="0" loc="(160,990)" name="Pin"/>
-    <comp lib="5" loc="(790,950)" name="LED"/>
-    <comp lib="1" loc="(630,1040)" name="OR Gate"/>
-    <comp lib="0" loc="(160,950)" name="Pin"/>
-    <comp lib="1" loc="(470,950)" name="XOR Gate"/>
-    <comp lib="1" loc="(320,1040)" name="AND Gate"/>
-    <comp lib="5" loc="(790,1040)" name="LED"/>
-    <comp lib="9" loc="(337,137)" name="Text">
-      <a name="text" val="4 bit Binary Adder"/>
-      <a name="font" val="SansSerif plain 20"/>
-    </comp>
-    <comp lib="9" loc="(340,207)" name="Text">
-      <a name="text" val="starts off with a half adder"/>
+    <wire from="(210,200)" to="(210,220)"/>
+    <wire from="(210,300)" to="(210,320)"/>
+    <wire from="(210,400)" to="(210,420)"/>
+    <wire from="(210,200)" to="(430,200)"/>
+    <wire from="(210,300)" to="(430,300)"/>
+    <wire from="(210,400)" to="(430,400)"/>
+    <wire from="(430,240)" to="(430,300)"/>
+    <wire from="(430,340)" to="(430,400)"/>
+    <wire from="(430,160)" to="(430,200)"/>
+    <comp lib="0" loc="(210,160)" name="Pin"/>
+    <comp lib="5" loc="(430,440)" name="LED"/>
+    <comp lib="0" loc="(210,460)" name="Pin"/>
+    <comp lib="0" loc="(210,240)" name="Pin"/>
+    <comp loc="(430,420)" name="fulladder"/>
+    <comp lib="0" loc="(210,340)" name="Pin"/>
+    <comp lib="0" loc="(210,140)" name="Pin"/>
+    <comp loc="(430,140)" name="halfadder"/>
+    <comp lib="5" loc="(430,140)" name="LED"/>
+    <comp lib="5" loc="(430,420)" name="LED"/>
+    <comp lib="0" loc="(210,360)" name="Pin"/>
+    <comp loc="(430,220)" name="fulladder"/>
+    <comp lib="5" loc="(430,320)" name="LED"/>
+    <comp lib="0" loc="(210,260)" name="Pin"/>
+    <comp lib="0" loc="(210,440)" name="Pin"/>
+    <comp loc="(430,320)" name="fulladder"/>
+    <comp lib="5" loc="(430,220)" name="LED"/>
+    <comp lib="9" loc="(146,267)" name="Text">
+      <a name="text" val="in11"/>
       <a name="font" val="SansSerif plain 12"/>
     </comp>
-    <comp lib="9" loc="(512,375)" name="Text">
-      <a name="text" val="carry bit linked to carry input of next full adder"/>
+    <comp lib="9" loc="(144,147)" name="Text">
+      <a name="text" val="in00"/>
       <a name="font" val="SansSerif plain 12"/>
     </comp>
-    <comp lib="9" loc="(675,1069)" name="Text">
-      <a name="text" val="overflow/carry bit"/>
+    <comp lib="9" loc="(146,250)" name="Text">
+      <a name="text" val="in01"/>
       <a name="font" val="SansSerif plain 12"/>
     </comp>
-    <comp loc="(1160,240)" name="halfadder"/>
-    <comp loc="(1160,320)" name="fulladder"/>
-    <comp loc="(1160,420)" name="fulladder"/>
-    <comp loc="(1160,520)" name="fulladder"/>
-    <comp lib="5" loc="(1160,240)" name="LED"/>
-    <comp lib="5" loc="(1160,320)" name="LED"/>
-    <comp lib="5" loc="(1160,420)" name="LED"/>
-    <comp lib="5" loc="(1160,520)" name="LED"/>
-    <comp lib="5" loc="(1160,540)" name="LED"/>
-    <comp lib="0" loc="(940,240)" name="Pin"/>
-    <comp lib="0" loc="(940,260)" name="Pin"/>
-    <comp lib="0" loc="(940,340)" name="Pin"/>
-    <comp lib="0" loc="(940,360)" name="Pin"/>
-    <comp lib="0" loc="(940,440)" name="Pin"/>
-    <comp lib="0" loc="(940,460)" name="Pin"/>
-    <comp lib="0" loc="(940,540)" name="Pin"/>
-    <comp lib="0" loc="(940,560)" name="Pin"/>
+    <comp lib="9" loc="(143,350)" name="Text">
+      <a name="text" val="in02"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(143,465)" name="Text">
+      <a name="text" val="in13"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(143,367)" name="Text">
+      <a name="text" val="in12"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(144,164)" name="Text">
+      <a name="text" val="in10"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(143,448)" name="Text">
+      <a name="text" val="in03"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(480,446)" name="Text">
+      <a name="text" val="overflow"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(471,423)" name="Text">
+      <a name="text" val="out3"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(470,324)" name="Text">
+      <a name="text" val="out2"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(469,222)" name="Text">
+      <a name="text" val="out1"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(471,145)" name="Text">
+      <a name="text" val="out0"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(580,422)" name="Text">
+      <a name="text" val="most significant bit (2^3)"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(578,145)" name="Text">
+      <a name="text" val="least significant bit (2^0)"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
   </circuit>
   <circuit name="halfadder">
     <a name="circuit" val="halfadder"/>
