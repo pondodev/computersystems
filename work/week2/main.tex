@@ -63,7 +63,6 @@
 When both inputs are on then both outputs turn off, which in a flip flop is an invalid state since Qb should always be the inverse of Qa.
 The reason why this is an issue is because if we go from a state where both inputs are on to one where both are off, in the physical
 realm we cannot predict what it's output would be since it would ultimately depend on which one is off first.
-{\color{red}(double check answer to this)}
 
 % d flip flop
 \begin{center}
@@ -73,8 +72,8 @@ realm we cannot predict what it's output would be since it would ultimately depe
         clk & set & Qa & Qb \\
         0 & 0 & 0 & 1 \\
         0 & 1 & 0 & 1 \\
-        1 & 1 & 0 & 0 \\
-        1 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 \\
+        1 & 0 & 0 & 1 \\
     \end{tabular}
 
     \includegraphics[scale=0.6]{images/dflipflop.png}
@@ -84,5 +83,25 @@ The D Flip Flop works by matching the set input when the clock input is on. This
 useful in circuit design for time sensitive tasks where you need to be sure that certain actions are synchroized with each other. This is
 used over the RS Flip Flop because it is both synchronized to a clock as well as completely safe to indeterminite states, or in other
 words the output is always predictable.
+
+% jk flip flop
+\begin{center}
+    \begin{tabular}{c c|c c}
+        \multicolumn{4}{c}{JK Flip Flop} \\
+        \hline
+        J & K & Qa & Qb \\
+        0 & 0 & 0 & 1 \\
+        1 & 0 & 1 & 0 \\
+        0 & 1 & 0 & 1 \\
+        1 & 1 & 1 & 0 \\
+    \end{tabular}
+
+    \includegraphics[scale=0.6]{images/jkflipflop.png}
+\end{center}
+
+The reason why the JK Flip Flop is considered a more programmable and general purpose flip flop is because of how you can adapt it's use to
+a D or T Flip Flop. To make it work like a D Flip Flop you simply control it with the J and K inputs to make Qa on or off respectively
+on a clock cycle. To make it work like a T Flip Flop then all you need to do is turn both J and K inputs on, which will in turn toggle Qa
+on and off with each clock cycle.
 
 \end{document}
