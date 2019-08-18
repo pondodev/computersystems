@@ -105,46 +105,46 @@
 
 - not gate
     - inverts input
-    a c
-    ---
-    1 0
-    0 1
+    | a | c |
+    | - | - |
+    | 1 | 0 |
+    | 0 | 1 |
 
 - or gate
     - addition
-    a b c
-    -----
-    0 0 0
-    0 1 1
-    1 0 1
-    1 1 1
+    | a | b | c |
+    | - | - | - |
+    | 0 | 0 | 0 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 1 |
 
 - and gate
     - multiplication
-    a b c
-    -----
-    0 0 0
-    0 1 0
-    1 0 0
-    1 1 1
+    | a | b | c |
+    | - | - | - |
+    | 0 | 0 | 0 |
+    | 0 | 1 | 0 |
+    | 1 | 0 | 0 |
+    | 1 | 1 | 1 |
 
 - nand gate
     - and gate with a not gate on the end
-    a b c
-    -----
-    0 0 1
-    0 1 1
-    1 0 1
-    1 1 0
+    | a | b | c |
+    | - | - | - |
+    | 0 | 0 | 1 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 0 |
 
 - xor gate
     - basis for modulo-2 binary addition
-    a b c
-    -----
-    0 0 0
-    0 1 1
-    1 0 1
-    1 1 0
+    | a | b | c |
+    | - | - | - |
+    | 0 | 0 | 0 |
+    | 0 | 1 | 1 |
+    | 1 | 0 | 1 |
+    | 1 | 1 | 0 |
 
 ## diagram conventions
 - wire has the same voltage
@@ -154,12 +154,12 @@
     - takes in two inputs
     - has two outputs (sum and carry bits)
     - x/y == inputs s == sum c == carry bits
-    x y s c
-    -------
-    0 0 0 0
-    0 1 1 0
-    1 0 1 0
-    1 1 0 1
+    | x | y | s | c |
+    | - | - | - | - |
+    | 0 | 0 | 0 | 0 |
+    | 0 | 1 | 1 | 0 |
+    | 1 | 0 | 1 | 0 |
+    | 1 | 1 | 0 | 1 |
 
 - full adder
     - three inputs
