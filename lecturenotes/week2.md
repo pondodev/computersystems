@@ -36,3 +36,37 @@
   - jk flip flops
 - d flip flops tend to be used for registers
 - jk flip flops are a more general "programmable" flip flop
+
+### d flip flop
+
+| D<sub>n</sub> | Q<sub>n+1</sub> |
+| ------------- | --------------- |
+| 0             | 0               |
+| 1             | 1               |
+
+- note that the n means "at the clock" while n+1 means "after the clock"
+- now we are essentially synchronising the output change with the clock cycle
+
+### jk flip flop
+
+| J | K | Q<sub>n+1</sub> |
+| - | - | --------------- |
+| 0 | 0 | Q<sub>n</sub>   |
+| 0 | 1 | 0               |
+| 1 | 0 | 1               |
+| 1 | 1 | Q'<sub>n</sub>  |
+
+- previously a state where both inputs are on would be a problem state, but now this essentially turns it into a toggle flip flop
+
+### t flip flop
+
+| T | Q<sub>n+1     |
+| - | ------------- |
+| 0 | Q<sub>n       |
+| 1 | Q'<sub>n</sub>|
+
+## more on flip flops
+
+- sometimes it is useful to provide both clocked and non-clocked inputs
+- when power is applied to a flip flop its state cannot be predicted
+- the asynchronous inputs are used as master reset or set inputs and override the clocked inputs if we should try to use one of these at the same time as the clock edge
