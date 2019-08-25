@@ -50,7 +50,9 @@ common clock 2 bit counter
 
 - if you want to make a 3 bit counter and above however it's more complicated than just chaining this together
 
-common clock 3 bit counter (place image here)
+![common clock 3 bit counter](./commonclock3bitcounter.png)
+
+common clock 3 bit counter
 
 - we can use a register made of d flip flops to make the output more stable and safe
 - doing this will, however, will give the output a one tick delay
@@ -58,6 +60,8 @@ common clock 3 bit counter (place image here)
 common clock 3 bit counter with a d flip flop register (place image here)
 
 ## shift registers
+
+![shift register](./shiftregister.png)
 
 - takes one input from one end and with each tick this input is shifted to the next d flip flop
 - allows us to do serial to parallel conversion
@@ -74,4 +78,6 @@ common clock 3 bit counter with a d flip flop register (place image here)
 - has a bit that will indicate whether the shifting goes left or right
 - two inputs for either the left or right
 
-bi-directional shift register (place image here)
+![bi-directional shift register](./bidirectionalshiftregister.png)
+
+bi-directional shift register
