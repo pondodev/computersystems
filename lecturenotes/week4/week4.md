@@ -21,7 +21,7 @@
   - modest power requirement
 - dynamic RAM
   - implemented with capacitors
-  - retains informatoin as long as the contents are refreshed frequently enough
+  - retains information as long as the contents are refreshed frequently enough
   - smaller area of silicon per byte
   - low power requirement
   - does not use flip flops
