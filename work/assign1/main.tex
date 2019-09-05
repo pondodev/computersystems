@@ -48,8 +48,7 @@ to go into the playing state and press pause to both go into the paused and play
     \includegraphics[scale=0.372]{images/stagetwo.png}
     \caption{Circuit used for stage two -- Volume control}
 \end{figure}
-This stage was a considerable amount more complicated than the last, and it has a circuit
-to match. For this I assumed that the pins/buttons could continuously make the volume go
+For this stage I assumed that the pins/buttons could continuously make the volume go
 up or down. With this in mind, I found it to be most appropriate to use a bi-directional
 shift register to control volume values. This is for two reasons:
 
@@ -74,5 +73,47 @@ from having both inputs on to just having the volume down input on it would go a
 zero from any state, which is not behaviour that we want. This may be solvable with a latch
 to time the inputs to the clock, but I haven't been able to apply this yet. As such, I chose
 the solution that gives the most consistent and useful output to the user.
+
+\pagebreak
+
+\section*{Stage 2}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{images/stagethree.png}
+    \caption{Circuit used for stage three -- Track control}
+\end{figure}
+Here we have the track control circuit that can be interacted with by using two buttons. For
+this I assumed that for inputs we can have buttons that continuously increment or decrement the
+track number. This circuit, unlike the previous two, are what I like to refer to as "semi
+synchronous" since while half of it is synched to a common clock, the other half is actually
+aysynchronously clocked to the output of the first half.
+
+\bigskip
+
+The basic overview is that this circuit works by having two 4 bit mod 10 bi-directional
+counters, one for the units column and one for the tens column of our decimal number that is
+being displayed on two hex displays. For both counters there is logic to allow it to count
+forwards or backwards in the form of two and gates and an or gate for each T flip flop. As well
+as this, there are two and gates that are used to check for a state of 10 (little endian 0101) and
+15 (little endian 1111) so that it can wrap around to the correct numbers. For each and gate there
+is also a control bit which is controlled by the next and previous button respectively to ensure
+that they are only "active" as long as they need to be for checking states. This makes sure that
+we're not getting false positive states when going either direction, allowing for smooth operation.
+
+\bigskip
+
+For each circuit however, there are very slight differences. The main thing of note is that it the
+second counter is not connected to the common clock for the circuit. This is because the first
+counter will instead feed the signal from overflow or underflow states (when it hits 10 or 15
+respectively) into the clock input of the next counter. This is why I mentioned previously that
+this circuit is "semi synchronous". However, this does not end up mattering all too much since
+there is a fully clocked register that is used as a buffer to ensure that all output signals are
+clean and no illegal states get out.
+
+\bigskip
+
+There is one issue with this circuit, that being that the registers delay the output signals by a
+tick. This is a worthwhile trade off in my opinion however, since this ensures data integrity which
+is important for preventing unexpected behaviour caused by illegal states.
 
 \end{document}
