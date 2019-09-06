@@ -24,23 +24,23 @@
     \includegraphics[scale=0.5]{images/stageone.png}
     \caption{Circuit used for stage one -- Play/pause functionality}
 \end{figure}
-For this stage I have two inputs in the form of buttons for play and pause. The way this is
-structured is by having a sort of latch for each button so that on press the state is stored
-for the next clock cycle to act upon. The latch is very simple, consisting of a D flip-flop
-that has both the set and D pins connected to the button. This is so that as soon as the
-button is pressed it's state is set and stored until the next clock cycle. It's important
-to note as well that the D pin must be connected to the button along with the set pin.
-This is because without doing so the latch would not be able to ever reset back to a 0 state,
-making it not very useful. Once we pass the latch, the play button goes into the J input of a
-JK flip-flop which turns on the Q output for us. The play button is similar in that it then
-feeds into the K input of the JK flip-flop, however we also need to give the pause button the
-ability to start playing again from a paused state if pressed. To do this we can connect the
-pause button to both J and K inputs, transforming it's functionality into a T flip-flop when
-the pause button is pressed. There is one issue however: the play button is already connected
-to the J input to trigger the playing state. To get around this so that we can allow both the
-play and pause buttons use the J input we can use an or gate which both buttons will connect
-to and have the output going into the J input. With this full circuit we can now press play
-to go into the playing state and press pause to both go into the paused and playing state.
+For this stage I have two inputs for play and pause. The way this is structured is by having
+a sort of latch for each input so that on a button press the state is stored for the next
+clock cycle to act upon. The latch is very simple, consisting of a D flip-flop that has both
+the set and D pins connected to the button. This is so that as soon as the button is pressed
+it's state is set and stored until the next clock cycle. It's important to note as well that
+the D pin must be connected to the button along with the set pin. This is because without
+doing so the latch would not be able to ever reset back to a 0 state, making it not very useful.
+Once we pass the latch, the play button goes into the J input of a JK flip-flop which turns
+on the Q output for us. The play button is similar in that it then feeds into the K input of
+the JK flip-flop, however we also need to give the pause button the ability to start playing
+again from a paused state if pressed. To do this we can connect the pause button to both J and
+K inputs, transforming it's functionality into a T flip-flop when the pause button is pressed.
+There is one issue however: the play button is already connected to the J input to trigger the
+playing state. To get around this so that we can allow both the play and pause buttons use the
+J input we can use an or gate which both buttons will connect to and have the output going into
+the J input. With this full circuit we can now press play to go into the playing state and
+press pause to both go into the paused and playing state.
 
 \section*{Stage 2}
 \begin{figure}
