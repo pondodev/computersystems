@@ -324,57 +324,41 @@ end TCL_Generic;
     <a name="circuitvhdlpath" val=""/>
     <wire from="(740,260)" to="(740,270)"/>
     <wire from="(420,400)" to="(470,400)"/>
-    <wire from="(360,380)" to="(360,400)"/>
+    <wire from="(420,420)" to="(470,420)"/>
     <wire from="(460,250)" to="(570,250)"/>
-    <wire from="(260,400)" to="(360,400)"/>
     <wire from="(810,200)" to="(810,280)"/>
     <wire from="(590,190)" to="(590,210)"/>
     <wire from="(590,250)" to="(590,270)"/>
     <wire from="(590,310)" to="(590,330)"/>
-    <wire from="(350,460)" to="(390,460)"/>
-    <wire from="(430,420)" to="(470,420)"/>
+    <wire from="(420,250)" to="(460,250)"/>
     <wire from="(530,400)" to="(810,400)"/>
     <wire from="(770,270)" to="(770,440)"/>
     <wire from="(590,270)" to="(740,270)"/>
-    <wire from="(360,380)" to="(390,380)"/>
     <wire from="(650,330)" to="(680,330)"/>
     <wire from="(590,310)" to="(620,310)"/>
     <wire from="(590,190)" to="(620,190)"/>
-    <wire from="(420,480)" to="(430,480)"/>
     <wire from="(460,440)" to="(470,440)"/>
-    <wire from="(260,190)" to="(590,190)"/>
-    <wire from="(260,310)" to="(590,310)"/>
     <wire from="(810,280)" to="(810,400)"/>
     <wire from="(680,230)" to="(680,240)"/>
     <wire from="(620,190)" to="(620,200)"/>
     <wire from="(620,310)" to="(620,320)"/>
-    <wire from="(390,380)" to="(390,390)"/>
-    <wire from="(390,460)" to="(390,470)"/>
-    <wire from="(340,250)" to="(460,250)"/>
     <wire from="(680,240)" to="(740,240)"/>
     <wire from="(680,240)" to="(680,330)"/>
+    <wire from="(420,190)" to="(590,190)"/>
+    <wire from="(420,310)" to="(590,310)"/>
     <wire from="(650,210)" to="(690,210)"/>
-    <wire from="(350,460)" to="(350,480)"/>
-    <wire from="(340,440)" to="(340,520)"/>
     <wire from="(530,440)" to="(770,440)"/>
     <wire from="(800,260)" to="(820,260)"/>
     <wire from="(800,220)" to="(820,220)"/>
     <wire from="(850,210)" to="(870,210)"/>
     <wire from="(850,270)" to="(870,270)"/>
-    <wire from="(260,480)" to="(350,480)"/>
     <wire from="(570,250)" to="(590,250)"/>
     <wire from="(570,370)" to="(590,370)"/>
     <wire from="(720,220)" to="(740,220)"/>
-    <wire from="(340,440)" to="(360,440)"/>
-    <wire from="(340,520)" to="(360,520)"/>
     <wire from="(570,250)" to="(570,370)"/>
-    <wire from="(350,480)" to="(360,480)"/>
-    <wire from="(260,250)" to="(340,250)"/>
     <wire from="(460,250)" to="(460,440)"/>
     <wire from="(810,200)" to="(820,200)"/>
     <wire from="(810,280)" to="(820,280)"/>
-    <wire from="(430,420)" to="(430,480)"/>
-    <wire from="(340,250)" to="(340,440)"/>
     <wire from="(680,230)" to="(690,230)"/>
     <comp lib="4" loc="(750,210)" name="J-K Flip-Flop"/>
     <comp lib="1" loc="(720,220)" name="OR Gate">
@@ -385,23 +369,8 @@ end TCL_Generic;
       <a name="output" val="true"/>
       <a name="label" val="Playing"/>
     </comp>
-    <comp lib="0" loc="(260,400)" name="Pin">
-      <a name="label" val="CircOn"/>
-    </comp>
     <comp lib="1" loc="(850,270)" name="AND Gate">
       <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(260,480)" name="Pin">
-      <a name="label" val="CircOff"/>
-    </comp>
-    <comp lib="0" loc="(260,190)" name="Pin">
-      <a name="label" val="Play"/>
-    </comp>
-    <comp lib="0" loc="(260,310)" name="Pin">
-      <a name="label" val="Pause"/>
-    </comp>
-    <comp lib="0" loc="(260,250)" name="Pin">
-      <a name="label" val="CLK"/>
     </comp>
     <comp lib="1" loc="(850,210)" name="AND Gate">
       <a name="size" val="30"/>
@@ -414,8 +383,21 @@ end TCL_Generic;
     </comp>
     <comp lib="4" loc="(600,200)" name="D Flip-Flop"/>
     <comp lib="4" loc="(480,390)" name="J-K Flip-Flop"/>
-    <comp lib="4" loc="(370,470)" name="D Flip-Flop"/>
-    <comp lib="4" loc="(370,390)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(420,400)" name="Pin">
+      <a name="label" val="CircOn"/>
+    </comp>
+    <comp lib="0" loc="(420,420)" name="Pin">
+      <a name="label" val="CircOff"/>
+    </comp>
+    <comp lib="0" loc="(420,250)" name="Pin">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(420,310)" name="Pin">
+      <a name="label" val="Pause"/>
+    </comp>
+    <comp lib="0" loc="(420,190)" name="Pin">
+      <a name="label" val="Play"/>
+    </comp>
   </circuit>
   <circuit name="StageTwo">
     <a name="circuit" val="StageTwo"/>
@@ -1378,24 +1360,30 @@ end TCL_Generic;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="circuitvhdlpath" val=""/>
-    <wire from="(180,190)" to="(210,190)"/>
-    <wire from="(180,170)" to="(210,170)"/>
-    <wire from="(180,210)" to="(210,210)"/>
+    <wire from="(130,220)" to="(130,270)"/>
+    <wire from="(130,160)" to="(160,160)"/>
+    <wire from="(130,270)" to="(210,270)"/>
     <wire from="(270,170)" to="(300,170)"/>
-    <comp lib="0" loc="(180,170)" name="Pin">
-      <a name="label" val="CircOn"/>
-    </comp>
-    <comp lib="0" loc="(180,190)" name="Pin">
-      <a name="label" val="CircOff"/>
-    </comp>
+    <wire from="(130,160)" to="(130,180)"/>
+    <wire from="(120,270)" to="(130,270)"/>
+    <wire from="(120,180)" to="(130,180)"/>
+    <wire from="(160,160)" to="(160,170)"/>
+    <wire from="(210,170)" to="(210,180)"/>
+    <wire from="(210,180)" to="(210,190)"/>
+    <wire from="(190,180)" to="(210,180)"/>
+    <wire from="(210,210)" to="(210,270)"/>
     <comp lib="4" loc="(220,160)" name="J-K Flip-Flop"/>
-    <comp lib="0" loc="(180,210)" name="Pin">
-      <a name="label" val="CLK"/>
-    </comp>
     <comp lib="0" loc="(300,170)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Power"/>
+    </comp>
+    <comp lib="0" loc="(120,180)" name="Pin">
+      <a name="label" val="Switch"/>
+    </comp>
+    <comp lib="4" loc="(140,170)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(120,270)" name="Pin">
+      <a name="label" val="CLK"/>
     </comp>
   </circuit>
   <circuit name="ButtonStateHolder">
