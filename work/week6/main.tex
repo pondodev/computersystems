@@ -1,0 +1,53 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Computer Systems Week 6 Lab}
+\author{Daniel Coady (102084174)}
+\date{19/09/2019}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment Progress}
+\subsection*{What I have so far}
+At this point in time, I have managed to get a total of 3 stages done, those being the
+play/pause, volume control, and track skipping stages. Right now I feel like I'm in a good
+place since (especially on the last stage) these have been the hardest things to plan
+out and implement. The last two stages of this assignment entail turning on and off the
+circuit, which should be fairly trivial to implement. I already have some rough ideas
+of how to control this for each individual circuit, mostly coming down to use of and
+gates to control the flow of data and using registers to store state when turned off and
+restore state when turned on.
+
+\subsection*{Challenges}
+Stages 1 and 2 were quite easy to plan and implement based off the knowledge gained from
+the lectures, but stage 3 wasn't as easy. There were a few reasons why this was the case:
+\begin{itemize}
+    \item Finding the right counter design wasn't as easy as initially thought
+    \item Trying to choose and justify why the circuit should be synchronous or not
+    \item Bi-directional counting from 0-99 is easy enough on it's own, but displaying it means we can't use a 7 bit counter
+\end{itemize}
+I ultimately was able to solve the issue, however it took me 2 weeks and 7 iterations to
+get it right. My circuit for the track skipping ended up containing two synchronous
+4 bit bi-directional MOD 10 counters, with one feeding into the other so that each counter
+can act as a "column" in our more familiar decimal system. The biggest trapping for me was
+ensuring that both counters could catch and correct illegal states (10 and 15 in this
+case) appropriately. The reason why this was an issue is because the state of 10 (1010) is
+actuallly "contained" within the state of 15 (1111) so sometimes you would get a state of
+15 tripping the check for if it was at 10. My solution to this was to give each check a
+control bit in the form of the next and previous controls. This works because 10 will only
+ever appear as a state if we are counting up, while 15 would appear only if we were
+counting down.
+
+\subsection*{Where to from here?}
+From here I have two stages left to complete. My current plan for these is to modify the
+existing circuits to handle the turning on and off, but then have external circuitry
+handle the storing of data into the registers. I'm still unsure of how well this will work,
+but for now this a start until I get to experimenting with the different approaches that
+I can take with these final tasks.
+
+\end{document}
