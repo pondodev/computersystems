@@ -2,9 +2,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\title{Computer Systems Assignment 1}
+\title{COS10004 Computer Systems Assignment 1}
 \author{Daniel Coady (102084174) -- 12:30 Wednesday}
-\date{25/08/2019}
+\date{19/09/2019}
 
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -76,7 +76,7 @@ the solution that gives the most consistent and useful output to the user.
 
 \pagebreak
 
-\section*{Stage 2}
+\section*{Stage 3}
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.3]{images/stagethree.png}
@@ -115,5 +115,99 @@ clean and no illegal states get out.
 There is one issue with this circuit, that being that the registers delay the output signals by a
 tick. This is a worthwhile trade off in my opinion however, since this ensures data integrity which
 is important for preventing unexpected behaviour caused by illegal states.
+
+\section*{Stage 4 and 5}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{images/stagefour.png}
+    \caption{Circuit used for stage four -- Turning on and off}
+\end{figure}
+Both of these stages go hand in hand for the most part since they work off each other.
+The circuit above is what I consider to be the "master" control circuit for handling
+the on/off state of the entire music player. The reason for this is because the input from
+the user only needs to go into one place, and from here the "on" signal can propogate out
+to the rest of the circuits, decreasing the overall complexity of the circuit while also
+allowing for easier expandibility elsewhere in the circuit. Take the following circuit
+for the play/pause functionality for example:
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{images/stageonenew.png}
+    \caption{Stage one circuit modified to work with on/off functionality}
+\end{figure}
+
+\pagebreak
+
+In this modified circuit for stage one, we have added a "power" pin that acts as a signal
+to tell this circuit if it should be on or off. If it is off then we turn off the control
+bits for the output off so no output is sent and we reset the JK flip flop so that when
+it's turned back on it will be in the paused state. The master control circuit's output
+then feeds into this power input to provide that signal. Having that logic in the master
+circuit means that we only need to have one JK flip flop handling every circuit's power
+state instead of requiring one for every circuit.
+
+\bigskip
+
+Along with this, the state for each circuit is stored internally within the flip flops
+that already exist. Outputs for these circuits are just disabled when the power pin is
+low, and once the power pin is high outputs are enabled again and the previous state is
+restored to the user's outputs. The reason I approached stage 5 like this is for two
+reasons:
+\begin{itemize}
+    \item To not over-complicate what is already a complicated set of circuits
+    \item To re-use what we already have, but in a different capacity
+\end{itemize}
+This gives our circuit an overall smaller footprint while still maintaining the same
+functionality to the user.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.35]{images/stagetwonew.png}
+    \caption{Stage two circuit modified to work with on/off functionality}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.25]{images/stagethreenew.png}
+    \caption{Stage three circuit modified to work with on/off functionality}
+\end{figure}
+
+\pagebreak
+
+\section*{Bonus Stage}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.25]{images/bonusstage.png}
+    \caption{Circuit used for the bonus stage -- Track timer}
+\end{figure}
+I have also attempted the bonus stage in this assignment, which with the previous circuits
+that have been done is actually fairly trivial. This is mostly just a a reworked circuit
+from stage 3, using the same counter design (however only uni-directional this time)
+and the same concept for making the counter MOD 10. There are a number of changes however:
+\begin{itemize}
+    \item There are now four counters total (two for the minutes and two for the seconds)
+    \item Each group of two counters is collectively MOD 60
+    \item The entire counter goes from 0 minutes and 0 seconds to 59 minutes and 59 seconds
+    \item The counter only counts in one direction
+    \item The counter must also be able to be reset by a single pin
+\end{itemize}
+Most of these changes were trivial, requiring only small modifications of logic or a small
+amount of new wiring for any of the new features. As a result, almost everything relevant
+to the circuit in stage 3 is also the case in this circuit.
+
+\pagebreak
+
+\section*{Final Circuit}
+For the final circuit I have abstracted away all of the stages into their own circuits as
+to make the final circuit where we have everything together more compact and easy to
+understand. Here there are all of the pieces brought together and their inputs are
+implemented along with outputs appropriate to each circuit. Generally speaking, there
+are some unresolved issues with some of the circuits:
+\begin{itemize}
+    \item Setting the clock speed higher than roughly 4Hz can have unexpected behaviour on some inputs
+    \item Circuits that use the button latch circuit (stages 1 and 4) may toggle back to it's previous state occasionally
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.35]{images/main.png}
+    \caption{The final circuit with all stages together}
+\end{figure}
 
 \end{document}
