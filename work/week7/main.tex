@@ -1,0 +1,83 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Computer Systems Week 7 Lab}
+\author{Daniel Coady (102084174)}
+\date{19/09/2019}
+
+\usepackage{graphicx}
+\usepackage{listing}
+
+\begin{document}
+
+\maketitle
+
+\section*{The code}
+
+\begin{verbatim}
+BASE = $3F000000      ; base address for rpi 3B
+GPIO_OFFSET = $200000 ; GPIO offset
+
+mov r0, BASE
+orr r0, GPIO_OFFSET   ; adding the offset to the base address
+
+                      ; program GPIO18 for writing
+mov r1, #1            ; write 1 into register 1
+lsl r1, #24           ; shift it 24 times to get to the start bit for pin
+str r1, [r0, #4]      ; write to the register
+
+                      ; set GPIO18 to on
+mov r1, #1            ; write 1 into register 1
+lsl r1, #18           ; shift it 18 times to get to the write bit for the pin
+str r1, [r0, #28]     ; enable write to the pin
+
+                      ; program GPIO23 for writing
+mov r1, #1
+lsl r1, #9
+str r1, [r0, #8]
+
+                      ; set GPIO23 to on
+mov r1, #1
+lsl r1, #23
+str r1, [r0, #28]
+
+loop:                 ; loop infinitely so the program doesnt crash
+b loop
+\end{verbatim}
+
+\section*{The questions}
+\subsection*{What number bit is set (within the associated 32-bit block) to enable GPIO23 for writing?}
+Bit 24 is set within the register
+
+\subsection*{What is the byte offset from GPIO\_BASE that this 32-bit block must be written to in memory?}
+The byte offset from GPIO\_BASE is 4
+
+\subsection*{What number bit is set to set GPIO23 to on? (again within the 32-bit block associated with that GPIO pin)}
+Bit 9 is set within the register
+
+\subsection*{What is the byte offset from GPIO\_BASE that this 32-bit block must be wrtten to memory?}
+The byte offset from GPIO\_BASE is 8
+
+\section*{Turning off the LED}
+\begin{verbatim}
+BASE = $3F000000
+GPIO_OFFSET = $200000
+
+mov r0, BASE
+orr r0, GPIO_OFFSET
+
+mov r1, #1
+lsl r1, #24
+str r1, [r0, #4]
+
+mov r1, #1
+lsl r1, #18
+str r1, [r0, #40] ; change this line to write a 0 to GPIO18 instead of a 1
+
+loop:
+b loop
+\end{verbatim}
+
+
+\end{document}
