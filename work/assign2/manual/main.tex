@@ -1,0 +1,100 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{COS10004 Computer Systems Assignment 2}
+\author{Daniel Coady (102084174) -- 12:30 Wednesday}
+\date{14/10/2019}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Daniel Coady (102084174)}
+\rhead{COS10004 Computer Systems -- Assignment 2}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\section{mov}
+\subsection{Syntax}
+\begin{verbatim}
+mov x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination
+    \item y is the value
+\end{itemize}
+\subsection{Description}
+Used to move a value into a register. Note that values must have 24
+consecutive zeroes in it's binary notation.
+\subsection{Example}
+\begin{verbatim}
+mov r0, $3F0000 ; valid
+mov r0, $003F00 ; valid
+mov r0, $00003F ; valid
+mov r0, $300F00 ; invalid
+\end{verbatim}
+
+\section{orr}
+\subsection{Syntax}
+\begin{verbatim}
+orr x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is value 1 and the destination
+    \item y is value 2
+\end{itemize}
+\subsection{Description}
+Performs a bitwise OR operation on x and y, storing the result in x.
+\subsection{Example}
+\begin{verbatim}
+mov r0, $10 ; r0 has 0x10
+orr r0, $01 ; r0 has 0x11
+\end{verbatim}
+
+\section{ldr}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{ldrd}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{str}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{add}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{sub}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{b}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{push}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\section{pop}
+\subsection{Syntax}
+\subsection{Description}
+\subsection{Example}
+
+\end{document}
