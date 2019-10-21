@@ -59,42 +59,215 @@ orr r0, $01 ; r0 has 0x11
 
 \section{ldr}
 \subsection{Syntax}
+\begin{verbatim}
+ldr x, [y]
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the register to store the value in
+    \item y is the location to get the value from
+\end{itemize}
 \subsection{Description}
+A pseudo instruction for storing 32-bit values in memory.
 \subsection{Example}
 
 \section{ldrd}
 \subsection{Syntax}
+\begin{verbatim}
+ldrd x, y, [z]
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the register for the least significant half of the value
+    \item y is the register for the most significant half of the value
+    \item z is the location to get the value from
+\end{itemize}
 \subsection{Description}
+Allows for storing of a 64-bit value across 2 32-bit registers.
 \subsection{Example}
+\begin{verbatim}
+ldrd r0, r1, [r2, #4]
+\end{verbatim}
 
 \section{str}
 \subsection{Syntax}
+\begin{verbatim}
+str x, [y]
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the value to store
+    \item y is the location to store the value into
+\end{itemize}
 \subsection{Description}
+Used to store values within registers.
 \subsection{Example}
+\begin{verbatim}
+str r0, [r1, #4]
+\end{verbatim}
 
 \section{add}
 \subsection{Syntax}
+\begin{verbatim}
+add x, y, z
+add y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination for the result
+    \item y is a register holding the first number to add
+    \item z is the second number to add
+\end{itemize}
 \subsection{Description}
+Adds two numbers together. If x is not specified, then y becomes the destination.
 \subsection{Example}
+\begin{verbatim}
+add r0, r1, #1
+add r0, #1
+\end{verbatim}
 
 \section{sub}
 \subsection{Syntax}
+\begin{verbatim}
+sub x, y, z
+sub y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination for the result
+    \item y is a register holding the first number to subtract
+    \item z is the second number to subtract
+\end{itemize}
 \subsection{Description}
+Subtracts z from y. If x is not specified, then y becomes the destination.
 \subsection{Example}
+
+\section{mul}
+\subsection{Syntax}
+\begin{verbatim}
+mul x, y, z
+mul y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination for the result
+    \item y is a register holding the first number to multiply
+    \item z is the second number to multiply
+\end{itemize}
+\subsection{Description}
+Multiplies y and z. If x is not specified, then y becomes the destination.
+\subsection{Example}
+\begin{verbatim}
+mul r0, r1, #2
+mul r0, #2
+\end{verbatim}
 
 \section{b}
 \subsection{Syntax}
+\begin{verbatim}
+bx y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the condition for branching
+    \item y is the label to branch to
+\end{itemize}
 \subsection{Description}
+Branch instruction that allows for jumping to labels in code.
 \subsection{Example}
+\begin{verbatim}
+loop:
+  ; do some stuff
+b loop
+\end{verbatim}
 
 \section{push}
 \subsection{Syntax}
+\begin{verbatim}
+push x
+push (x, y, z, ...)
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x, y, z, ... is the value to push onto the stack
+\end{itemize}
 \subsection{Description}
+Allows for pushing of values from registers onto the stack.
 \subsection{Example}
+\begin{verbatim}
+push #1
+push (#1, #2, #3)
+\end{verbatim}
 
 \section{pop}
 \subsection{Syntax}
+\begin{verbatim}
+pop x
+pop (x, y, z, ...)
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x, y, z, ... is the register to store the value popped off the stack
+\end{itemize}
 \subsection{Description}
+Allows for popping of values off the stack into registers.
 \subsection{Example}
+\begin{verbatim}
+pop r0
+pop (r0, r1, r2)
+\end{verbatim}
+
+\section{lsl}
+\subsection{Syntax}
+\begin{verbatim}
+lsl x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the register holding the value to shift
+    \item y is the amount to shift the value by in decimal
+\end{itemize}
+\subsection{Description}
+Logical shift left of a binary value.
+\subsection{Example}
+\begin{verbatim}
+mov r1, #1
+lsl r1, #24
+\end{verbatim}
+
+\section{lsr}
+\subsection{Syntax}
+\begin{verbatim}
+lsr x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the register holding the value to shift
+    \item y is the amount to shift the value by in decimal
+\end{itemize}
+\subsection{Description}
+Logical shift right of a binary value.
+\subsection{Example}
+\begin{verbatim}
+mov r1, $0000FF
+lsr r1, #10
+\end{verbatim}
+
+\section{cmp}
+\subsection{Syntax}
+\begin{verbatim}
+cmp x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the first value to compare
+    \item y is the second value to compare
+\end{itemize}
+\subsection{Description}
+Compares two values to allow for conditional checks.
+\subsection{Example}
+\begin{verbatim}
+cmp r0, #1
+\end{verbatim}
 
 \end{document}
