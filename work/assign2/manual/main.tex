@@ -264,10 +264,47 @@ Where:
     \item y is the second value to compare
 \end{itemize}
 \subsection{Description}
-Compares two values to allow for conditional checks.
+Compares two values to allow for conditional checks. Stores the result in
+the APSR.
 \subsection{Example}
 \begin{verbatim}
 cmp r0, #1
+\end{verbatim}
+
+\section{bic}
+\subsection{Syntax}
+\begin{verbatim}
+bic x, y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination register
+    \item y is the register holding the value
+    \item z is the bitmask
+\end{itemize}
+\subsection{Description}
+Performs a bitwise and not operation on y using z as a bitmask.
+\subsection{Example}
+\begin{verbatim}
+bic r1, r1, #7
+\end{verbatim}
+
+\section{tst}
+\subsection{Syntax}
+\begin{verbatim}
+tst x, y
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the register holding the value to test
+    \item y is the bitmask
+\end{itemize}
+\subsection{Description}
+Performs a bitwise and operation on x using y as a bitmask. Stores test
+result in the APSR.
+\subsection{Example}
+\begin{verbatim}
+tst r0, #1024
 \end{verbatim}
 
 \end{document}
