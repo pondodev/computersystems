@@ -72,6 +72,48 @@ lineloop:
   cmp r4,r8
 bls lineloop      ;branch less than or same
 
+; drawing a square
+; set starting point
+mov r4, #1
+mov r5, #10
+squarehor: ; horizontal lines of the square
+  push {r0-r3}
+  mov r0, r7 ; get the screen address
+  mov r1, r4 ; store x coord
+  mov r2, r5 ; store y coord
+  mov r3, r6 ; store colour
+  bl drawpixel ; draw the pixel
+  
+  mov r0, r7 ; get the screen address
+  add r2, #50
+  bl drawpixel
+  pop {r0-r3}
+
+  add r4, #1
+  cmp r4, #50
+bls squarehor
+
+; set starting point
+mov r4, #1
+mov r5, #10
+squarever: ; vertical lines of the square
+  push {r0-r3}
+  mov r0, r7 ; get the screen address
+
+  mov r1, r4 ; store x coord
+  mov r2, r5 ; store y coord
+  mov r3, r6 ; store colour
+  bl drawpixel ; draw the pixel
+
+  mov r0, r7 ; get the screen address
+  add r1, #50
+  bl drawpixel
+  pop {r0-r3}
+
+  add r5, #1
+  cmp r5, #60
+bls squarever
+
 
 ;flash the LED to show we're almost finished
 push {r0-r9}
