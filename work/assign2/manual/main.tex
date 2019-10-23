@@ -57,6 +57,66 @@ mov r0, $10 ; r0 has 0x10
 orr r0, $01 ; r0 has 0x11
 \end{verbatim}
 
+\section{eor}
+\subsection{Syntax}
+\begin{verbatim}
+eor x, y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination register
+    \item y is register holding the first value
+    \item z is the second value
+\end{itemize}
+\subsection{Description}
+Performs a bitwise exclusive OR operation on y and z, storing the result
+in x if specified. If x is not specified then the result is stored in y.
+\subsection{Example}
+\begin{verbatim}
+eor r0, r1, #7
+eor r0, #7
+\end{verbatim}
+
+\section{orn}
+\subsection{Syntax}
+\begin{verbatim}
+orn x, y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination register
+    \item y is register holding the first value
+    \item z is the second value
+\end{itemize}
+\subsection{Description}
+Performs a bitwise OR NOT operation on y and z, storing the result
+in x if specified. If x is not specified then the result is stored in y.
+\subsection{Example}
+\begin{verbatim}
+orn r0, r1, #7
+orn r0, #7
+\end{verbatim}
+
+\section{and}
+\subsection{Syntax}
+\begin{verbatim}
+and x, y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination
+    \item y is the register holding the first value
+    \item z is the second value
+\end{itemize}
+\subsection{Description}
+Performans a bitwise AND operation on y and z. Stores the result in x,
+but if x is not specified then it is stores in y.
+\subsection{Example}
+\begin{verbatim}
+and r0, r1, #7
+and r0, #7
+\end{verbatim}
+
 \section{ldr}
 \subsection{Syntax}
 \begin{verbatim}
@@ -141,6 +201,26 @@ Where:
 \subsection{Description}
 Subtracts z from y. If x is not specified, then y becomes the destination.
 \subsection{Example}
+
+\section{rsb}
+\subsection{Syntax}
+\begin{verbatim}
+rsb x, y, z
+\end{verbatim}
+Where:
+\begin{itemize}
+    \item x is the destination register
+    \item y is the register holding the first value
+    \item z is the second value
+\end{itemize}
+\subsection{Description}
+Just like the sub instruction it performs a subtraction on the two values.
+The difference however is that rsb will subtract y from z.
+\subsection{Example}
+\begin{verbatim}
+rsb r0, r1, #10
+rsb r0, #10
+\end{verbatim}
 
 \section{mul}
 \subsection{Syntax}
