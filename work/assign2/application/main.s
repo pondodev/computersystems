@@ -110,8 +110,8 @@ checkbuzz:
   mov r1, #5
   bl isdivisible // check if r0 is divisible by 5
   pop {r0, r1}
-  cmp r3, #2
-  addeq r1, #1   // add 2 to result if is divisible
+  cmp r3, #1
+  addeq r1, #2   // add 2 to result if is divisible
   pop {lr}
   bx lr
 
@@ -122,13 +122,13 @@ checkbuzz:
 // return values:
 // r3 = true (1) false (0)
 isdivisible:
-  push {r0-r2}
+  push {r0, r2}
   udiv r2, r0, r1 // store division result in r2
   mul r2, r1      // multiply result by divisor
   mov r3, #0      // store a false return value
   cmp r2, r0      // check if r2 == r0
   addeq r3, #1    // add one to our return value if they are equal
-  pop {r0-r2}
+  pop {r0, r2}
   bx lr
 
 return:
