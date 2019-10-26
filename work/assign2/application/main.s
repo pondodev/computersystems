@@ -1,25 +1,21 @@
 .section .data
-fizz:
-.ascii "fizz\n"
-buzz:
-.ascii "buzz\n"
-fizzbuzz:
-.ascii "fizzbuzz\n"
-nothing:
-.ascii "nothing\n"
+fizz:     .ascii "fizz\n"
+buzz:     .ascii "buzz\n"
+fizzbuzz: .ascii "fizzbuzz\n"
+number:   .ascii "number\n"
 
 .section .text
 .globl _start
 
 _start:
   // we'll just go from 1-30 for this program
-  mov r0, #30 // this will be our index to check against
+  mov r0, #1 // this will be our index to check against
   loop:
     push {r0} // store index on the stack while we don't need it
 
     // this will work by checking for both fizz and buzz. if we get fizz, we add 1 to r1.
     // if we get buzz, we add 2 to r1. so that way we can deduce the following:
-    // 0 = nothing
+    // 0 = number
     // 1 = fizz
     // 2 = buzz
     // 3 = fizzbuzz
@@ -32,7 +28,7 @@ _start:
 
     // now we can start printing stuff
     cmp r1, #0
-    bleq saynothing
+    bleq saynumber
     cmp r1, #1
     bleq sayfizz
     cmp r1, #2
@@ -41,8 +37,8 @@ _start:
     bleq sayfizzbuzz
 
     pop {r0}   // get our index back
-    sub r0, #1 // decrement index by 1
-    cmp r0, #0
+    add r0, #1 // increment index by 1
+    cmp r0, #31
     bne loop   // loop back if we're not done
 
   b return     // once we are done with the application
@@ -71,10 +67,10 @@ sayfizzbuzz:
   pop {lr}
   bx lr
 
-saynothing:
+saynumber:
   push {lr}
-  ldr r1, =nothing
-  mov r2, #8 // length of word
+  ldr r1, =number
+  mov r2, #7 // length of word
   bl print
   pop {lr}
   bx lr
@@ -126,13 +122,13 @@ checkbuzz:
 // return values:
 // r3 = true (1) false (0)
 isdivisible:
-  push {r0-r3}
+  push {r0-r2}
   udiv r2, r0, r1 // store division result in r2
   mul r2, r1      // multiply result by divisor
   mov r3, #0      // store a false return value
   cmp r2, r0      // check if r2 == r0
   addeq r3, #1    // add one to our return value if they are equal
-  pop {r0-r3}
+  pop {r0-r2}
   bx lr
 
 return:
