@@ -11,7 +11,7 @@
 
 - read and write assembly language programs for a simple microcomputer
 - identify the hardware components of a computer and the fucntion they perform
-- describe the overall behavious of compilers, assemblers, linkers and interpreters
+- describe the overall behaviours of compilers, assemblers, linkers and interpreters
 - agrue some of the tradeoffs between hardware and software that occur in computer system design
 
 - there are tutorials chris has made on youtube for the labs

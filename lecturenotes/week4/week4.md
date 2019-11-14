@@ -8,11 +8,12 @@
 - PROM (programmable read only memory)
   - programmed by a once only irreversible operation
 - EPROM (erasable programmable read only memory)
-  - can be removed from the computer
+  - must be removed from the computer to be modified
   - sometimes called field programmable
   - bulk erased: every byte erased at the same time
+  - byte programmable: writes the bytes one by one
 - EEPROM (electrical erasable programmable read only memory)
-  - **put some info here**
+  - like EPROM but can be modified from within the computer
 - RAM (random access memory)
   - these days is more like RWM (read-write memory)
 - static RAM
@@ -25,13 +26,12 @@
   - smaller area of silicon per byte
   - low power requirement
   - does not use flip flops
-  - **put more info here**
   - not as fast as static RAM
 - SDRAM (synchronous DRAM)
   - hybrid of dynamic and static tech
   - "clocked" by the main cpu clock
 - DDR (double data rate) SDRAM
-  - chips product data on rising and falling edges of the clock
+  - chips produce data on rising and falling edges of the clock
   - higher data rate (eg. 64 bits/nsec)
 - FRAM (Ferroelectric RAM)
   - uses atom position in unit cell (in theory)
@@ -84,7 +84,8 @@
 - a computer architecture where instructions and data are kept separate
 - runs faster (generally) and more secure (generally) than von neumann, but more expensive and less extensible
 - data bus and control buses can be different widths, types
-- **more info to go here**
+- no stacks allowed explicitly within this architecture
+- reasonably immune to stack overflows
 
 ## modified harvard
 
@@ -113,8 +114,10 @@
 
 ## how I/O INTs work
 
-- **more info to go here**
-
+- each hardware event is mapped to an interrupt number, highest priority first (lowest number)
+- define an interrupt vector table
+  - an array of addresses of functions (the int handlers) which execute depending on the interrupt level
+- set up interrupt mask -- enables/disables each interrupt type
 - any routine can be interrupted, including the code loaded by an INT handler routine if the priority is higher
 - loading an INT handler is **atomic** (cannot be interrupted)
 
@@ -143,13 +146,12 @@
 
 - a function that calls itself
 - von neymann architecture also supports recursion
-- each new instance of a recursive procedure is launched in its own stack frame
-- after pushing IP pointing to the previous process onto the stack
-- **more info here**
+  - each new instance of a recursive procedure is launched in its own stack frame
+  - after pushing IP pointing to the previous process onto the stack
+- the amount of int handlers running using this method is only limited by the amount of physical memory you have for the stack
+  - when you run out of space on the stack, you get a stack overflow
 
 ## building a hardware stack
-
-**place image of hardware stack here**
 
 - starts with a bi-directional shift register
 - data is serial input
